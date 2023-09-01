@@ -84,7 +84,7 @@ const Header = ({ cart, updateCart, placeOrder }) => {
             <>
               {cart.map((c) => {
                 return (
-                  <div className="text-center h5 mt-5 mb-2 d-flex align-items-center justify-content-center">
+                  <div className="text-center h5 mt-5 mb-2 d-flex align-items-center justify-content-center gap-3">
                     <span>{c.title}</span>
                     <span>
                       {c.price} * {c.qty} = {c.price * c.qty}
