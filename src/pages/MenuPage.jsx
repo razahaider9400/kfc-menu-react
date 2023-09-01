@@ -40,7 +40,7 @@ const MenuPage = () => {
           swal
             .fire({
               title: "Are you sure?",
-              text: "You won't be able to revert this!",
+              text: "You want to remove the item from the cart!",
               icon: "warning",
               showCancelButton: true,
               confirmButtonColor: "#3085d6",
@@ -50,7 +50,7 @@ const MenuPage = () => {
             .then((result) => {
               if (result.isConfirmed) {
                 setCart(newCart.filter((c) => c.id !== findProduct.id));
-                Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                Swal.fire("Deleted!", "Item removed from cart.", "success");
               }
             });
         }
