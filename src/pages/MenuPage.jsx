@@ -45,12 +45,12 @@ const MenuPage = () => {
               showCancelButton: true,
               confirmButtonColor: "#3085d6",
               cancelButtonColor: "#d33",
-              confirmButtonText: "Yes, delete it!",
+              confirmButtonText: "Yes, remove it!",
             })
             .then((result) => {
               if (result.isConfirmed) {
                 setCart(newCart.filter((c) => c.id !== findProduct.id));
-                Swal.fire("Deleted!", "Item removed from cart.", "success");
+                Swal.fire("Removed!", "Item removed from cart.", "success");
               }
             });
         }
