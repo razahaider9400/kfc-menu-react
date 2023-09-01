@@ -51,6 +51,7 @@ const Header = ({ cart, updateCart, placeOrder }) => {
               <div key={c.id} className="card p-0 bg-black my-3">
                 <div className="card-body">
                   <h5 className="text-center">{c.title}</h5>
+                  <h6>Rs. {c.price}</h6>
                   <div className="d-flex align-items-center justify-content-center">
                     <img
                       className="d-block me-auto"
@@ -81,6 +82,16 @@ const Header = ({ cart, updateCart, placeOrder }) => {
           })}
           {cart.length > 0 ? (
             <>
+              {cart.map((c) => {
+                return (
+                  <div className="text-center h5 mt-5 mb-2 d-flex align-items-center justify-content-center">
+                    <span>{c.title}</span>
+                    <span>
+                      {c.price} * {c.qty} = {c.price * c.qty}
+                    </span>
+                  </div>
+                );
+              })}
               <h5 className="text-center mt-5 mb-2">
                 Total ={" "}
                 {cart.reduce((total, item) => total + item.price * item.qty, 0)}
