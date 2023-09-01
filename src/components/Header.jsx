@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Header = ({ cart, updateCart, total, placeOrder }) => {
+const Header = ({ cart, updateCart, placeOrder }) => {
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg navbar-black bg-black pt-3">
@@ -80,7 +80,7 @@ const Header = ({ cart, updateCart, total, placeOrder }) => {
             );
           })}
           {cart.length > 0 ? (
-            <h5 className="text-center mt-5 mb-2">Total = {total}</h5>
+            <h5 className="text-center mt-5 mb-2">Total = {cart.reduce((total, item)=>total+(item.price*item.qty),0)}</h5>
           ) : (
             <p className="mt-5"> Cart is empty</p>
           )}

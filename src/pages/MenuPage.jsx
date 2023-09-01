@@ -9,7 +9,7 @@ const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].id);
   const [title, setTitle] = useState(categories[0].title);
   const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
+
   const [swalProps, setSwalProps] = useState({});
 
   const categoryButton = (cat) => {
@@ -69,12 +69,6 @@ const MenuPage = () => {
         timer: 1500,
       });
     }
-
-    let sum = cart.reduce(function (prev, current) {
-      return prev + +current.price * current.qty;
-    }, product.price * qty);
-
-    setTotal(sum);
   };
 
   return (
@@ -82,7 +76,6 @@ const MenuPage = () => {
       <Header
         cart={cart}
         updateCart={updateCart}
-        total={total}
         placeOrder={placeOrder}
       />
       <Categories
