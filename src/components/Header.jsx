@@ -80,17 +80,21 @@ const Header = ({ cart, updateCart, placeOrder }) => {
             );
           })}
           {cart.length > 0 ? (
-            <h5 className="text-center mt-5 mb-2">Total = {cart.reduce((total, item)=>total+(item.price*item.qty),0)}</h5>
+            <>
+              <h5 className="text-center mt-5 mb-2">
+                Total ={" "}
+                {cart.reduce((total, item) => total + item.price * item.qty, 0)}
+              </h5>
+              <button
+                className="col-10 mx-auto btn btn-danger text-white py-2 cart-button"
+                onClick={placeOrder}
+              >
+                Place Order
+              </button>
+            </>
           ) : (
             <p className="mt-5"> Cart is empty</p>
           )}
-
-          <button
-            className="col-10 mx-auto btn btn-danger text-white py-2 cart-button"
-            onClick={placeOrder}
-          >
-            Place Order
-          </button>
         </div>
       </div>
     </>
