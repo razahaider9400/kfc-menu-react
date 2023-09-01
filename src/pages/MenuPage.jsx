@@ -57,14 +57,6 @@ const MenuPage = () => {
       } else {
         findProduct.qty = findProduct.qty + qty;
         setCart(newCart);
-        swal.fire({
-          show: true,
-          position: "center",
-          icon: "success",
-          title: "Product added to cart",
-          showConfirmButton: false,
-          timer: 1500,
-        });
       }
     } else {
       setCart([...cart, { ...product, qty }]);
