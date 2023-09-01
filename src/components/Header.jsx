@@ -19,7 +19,13 @@ const Header = ({ cart, updateCart, total, placeOrder }) => {
               data-bs-toggle="offcanvas"
               data-bs-target="#cartOffCanvas"
             ></i>
-            <p className="cart-count fs-5">{cart.length}</p>
+            <p
+              className="cart-count fs-5"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#cartOffCanvas"
+            >
+              {cart.length}
+            </p>
           </div>
         </div>
       </nav>
