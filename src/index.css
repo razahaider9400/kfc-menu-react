@@ -62,10 +62,8 @@ body{
 }
 .cart-button{
   border-radius: 25px;
-  position: absolute;
   justify-content: center;
-  bottom: 10px;
-  left:8%;
+  margin-top: 10%;
 }
 
 .cart-count {
