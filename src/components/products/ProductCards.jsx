@@ -17,8 +17,8 @@ const ProductCards = ({ product, catId, updateCart }) => {
     return (
       <>
         <div className="col">
-          <div className="card product-card p-0 mx-auto">
-            <img src={product.image} className="card-img-top" alt="..." />
+          <div className="card product-card p-0 mx-auto hvr-box-shadow-outset">
+            <img src={product.image} className="card-img-top hvr-float-shadow" alt="..." />
             <div className="card-body text-start">
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">
