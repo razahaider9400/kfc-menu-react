@@ -4,13 +4,12 @@ import Categories from "../components/categories/Categories";
 import Products from "../components/products/Products";
 import categories from "../data/categories.json";
 import products from "../data/products.json";
+import AllProducts from "../components/products/AllProducts";
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].id);
   const [title, setTitle] = useState(categories[0].title);
   const [cart, setCart] = useState([]);
-
-  const [swalProps, setSwalProps] = useState({});
 
   const categoryButton = (cat) => {
     setSelectedCategory(cat.id);
@@ -73,22 +72,26 @@ const MenuPage = () => {
 
   return (
     <>
-      <Header
-        cart={cart}
-        updateCart={updateCart}
-        placeOrder={placeOrder}
-      />
+      <Header cart={cart} updateCart={updateCart} placeOrder={placeOrder} />
       <Categories
         categories={categories}
         clickedButton={categoryButton}
         catId={selectedCategory}
       />
-      <Products
-        products={products}
-        catId={selectedCategory}
-        catTitle={title}
-        updateCart={updateCart}
-      />
+      {selectedCategory >= 1 ? (
+        <Products
+          products={products}
+          catId={selectedCategory}
+          catTitle={title}
+          updateCart={updateCart}
+        />
+      ) : (
+        <AllProducts
+          products={products}
+          cat={categories}
+          updateCart={updateCart}
+        />
+      )}
     </>
   );
 };
