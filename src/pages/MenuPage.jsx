@@ -58,7 +58,6 @@ const MenuPage = () => {
         setCart(newCart);
         if (showSwal) {
           swal.fire({
-            show: true,
             position: "center",
             icon: "success",
             title: "Product added to cart",
@@ -70,7 +69,6 @@ const MenuPage = () => {
     } else {
       setCart([...cart, { ...product, qty }]);
       swal.fire({
-        show: true,
         position: "center",
         icon: "success",
         title: "Product added to cart",
