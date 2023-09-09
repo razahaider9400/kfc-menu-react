@@ -27,7 +27,7 @@ const MenuPage = () => {
       timer: 1500,
     });
   };
-  const updateCart = (product, qty, minus = false) => {
+  const updateCart = (product, qty, minus = false, cart = false) => {
     let newCart = [...cart];
     let findProduct = newCart.find((e) => e.id === product.id);
     if (findProduct) {
@@ -56,14 +56,16 @@ const MenuPage = () => {
       } else {
         findProduct.qty = findProduct.qty + qty;
         setCart(newCart);
-        swal.fire({
-          show: true,
-          position: "center",
-          icon: "success",
-          title: "Product added to cart",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        if (!cart) {
+          swal.fire({
+            show: true,
+            position: "center",
+            icon: "success",
+            title: "Product added to cart",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       }
     } else {
       setCart([...cart, { ...product, qty }]);

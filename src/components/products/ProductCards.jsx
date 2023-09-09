@@ -79,7 +79,7 @@ const ProductCards = ({ product, catId, updateCart }) => {
             </div>
             <button
               className="col-10 mx-auto btn btn-danger text-white py-2 cart-button"
-              onClick={() => updateCart(product, count)}
+              onClick={() => updateCart(product, count, false, true)}
             >
               Add To Cart
             </button>

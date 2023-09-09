@@ -82,7 +82,6 @@ const Header = ({ cart, updateCart, placeOrder }) => {
           })}
           {cart.length > 0 ? (
             <>
-  
               <h5 className="text-center mt-5 mb-2">
                 Total ={" "}
                 {cart.reduce((total, item) => total + item.price * item.qty, 0)}
