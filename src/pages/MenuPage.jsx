@@ -27,7 +27,7 @@ const MenuPage = () => {
       timer: 1500,
     });
   };
-  const updateCart = (product, qty, minus = false, showSwal = true) => {
+  const updateCart = (product, qty, minus = false, showSwal = false) => {
     let newCart = [...cart];
     let findProduct = newCart.find((e) => e.id === product.id);
     if (findProduct) {
