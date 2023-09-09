@@ -82,16 +82,7 @@ const Header = ({ cart, updateCart, placeOrder }) => {
           })}
           {cart.length > 0 ? (
             <>
-              {cart.map((c) => {
-                return (
-                  <div className="text-center h5 mt-5 mb-2 d-flex align-items-center justify-content-center gap-3">
-                    <span>{c.title}</span>
-                    <span>
-                      {c.price} * {c.qty} = {c.price * c.qty}
-                    </span>
-                  </div>
-                );
-              })}
+  
               <h5 className="text-center mt-5 mb-2">
                 Total ={" "}
                 {cart.reduce((total, item) => total + item.price * item.qty, 0)}
