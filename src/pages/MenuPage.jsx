@@ -27,7 +27,7 @@ const MenuPage = () => {
       timer: 1500,
     });
   };
-  const updateCart = (product, qty, minus = false, cart = true) => {
+  const updateCart = (product, qty, minus = false, showSwal = true) => {
     let newCart = [...cart];
     let findProduct = newCart.find((e) => e.id === product.id);
     if (findProduct) {
@@ -56,7 +56,7 @@ const MenuPage = () => {
       } else {
         findProduct.qty = findProduct.qty + qty;
         setCart(newCart);
-        if (!cart) {
+        if (showSwal) {
           swal.fire({
             show: true,
             position: "center",
